@@ -33,16 +33,16 @@ async def root():
     return {"message": "Hello orldssadsa"}
 
 
-while True:
-    try:
-        conn = psycopg2.connect(host='localhost',database='fastapi',user='postgres',password='postgres',cursor_factory=RealDictCursor)
-        cursor = conn.cursor()
-        print('database connection was successful')
-        break
-    except Exception as error:
-        print('connection to db failed')
-        print('error was',error)
-        time.sleep(2)
+# while True:
+#     try:
+#         conn = psycopg2.connect(host='localhost',database='fastapi',user='postgres',password='postgres',cursor_factory=RealDictCursor)
+#         cursor = conn.cursor()
+#         print('database connection was successful')
+#         break
+#     except Exception as error:
+#         print('connection to db failed')
+#         print('error was',error)
+#         time.sleep(2)
         
 
 app.include_router(user.router)
